@@ -75,7 +75,7 @@ fun HomeScreen() {
         ) {
             UserInfo(
                 messageOne = "Hello Charlotte",
-                messageTwo = "Find The Best Coffee Beans",
+                messageTwo = "Find Top Coffee Beans",
                 image = R.drawable.person_i2jpg,
                 imageDescription = "user profile image"
             )
@@ -195,10 +195,10 @@ fun SearchBar() {
         mutableStateOf("Ethopia Beans")
     }
     Surface(
-        modifier = Modifier.fillMaxWidth()
+        modifier = Modifier.fillMaxWidth().height(50.dp)
     ) {
         Box(
-            contentAlignment = Alignment.Center
+contentAlignment = Alignment.Center
         ) {
 
             TextField(value = value,
@@ -383,8 +383,9 @@ fun SpecialDiscountCard(image: Int) {
 
                     Text(
                         text = "Get Two Products for the Price of One",
-                        Modifier.padding(5.dp),
-                        fontFamily = FontFamily.Monospace
+                        Modifier.padding(horizontal = 5.dp),
+                        fontFamily = FontFamily.Monospace,
+                        letterSpacing = 0.sp
                     )
                 }
             }
