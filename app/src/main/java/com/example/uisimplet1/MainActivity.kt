@@ -75,7 +75,7 @@ fun HomeScreen() {
         ) {
             UserInfo(
                 messageOne = "Hello Charlotte",
-                messageTwo = "Find your best beans",
+                messageTwo = "Find The Best Coffee Beans",
                 image = R.drawable.person_i2jpg,
                 imageDescription = "user profile image"
             )
@@ -273,7 +273,7 @@ fun CoffeCard(
             .height(250.dp)
             .background(Color.White),
         elevation = CardDefaults.cardElevation(
-            defaultElevation = 4.dp
+            defaultElevation = 2.dp
         ),
         colors = CardDefaults.cardColors(
             containerColor = Color(0xffF5F5F5),
@@ -339,17 +339,55 @@ fun CoffeCard(
 
 
 @Composable
-fun SpecialDiscountCard(image:Int) {
+fun SpecialDiscountCard(image: Int) {
     Card(
-
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(100.dp),
+        colors = CardDefaults.cardColors(
+            Color(0XFFAEAEAE)
+        ),
+        elevation = CardDefaults.cardElevation(
+            defaultElevation = 7.dp
+        )
     ) {
-    Row {
-        Image(painter = painterResource(id = image), contentDescription = "dicount product image")
-        Surface {
-            Column {
+        Row {
+            Image(
+                painter = painterResource(id = image),
+                contentDescription = "dicount product image"
+            )
+            Surface(
+                modifier = Modifier.fillMaxSize()
+            ) {
+                Column(
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
+                    Surface(
+                        color = Color(0XFFAEAEAE),
+                        shape = CircleShape,
+                        modifier = Modifier.padding(top = 3.dp)
+                    ) {
+                        Text(
+                            text = "Discount Sale \uD83C\uDFF7️",
+                            modifier = Modifier
+                                .padding(vertical = 8.dp, horizontal = 16.dp)
+                                .clip(
+                                    CircleShape
+                                ),
+                            color = Color(0XFFD17842),
+                            fontWeight = FontWeight.Bold,
+                            fontFamily = FontFamily.Monospace,
+                            fontSize = 10.sp
+                        )
+                    }
 
+                    Text(
+                        text = "Get Two Products for the Price of One",
+                        Modifier.padding(5.dp),
+                        fontFamily = FontFamily.Monospace
+                    )
+                }
             }
         }
-    }
     }
 }
